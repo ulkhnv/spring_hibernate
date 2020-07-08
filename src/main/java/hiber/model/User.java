@@ -10,6 +10,7 @@ public class User {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
+
    @Column(name = "name")
    private String firstName;
 
@@ -19,7 +20,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne(mappedBy = "user")
+   @OneToOne(cascade=CascadeType.ALL)
    private Car car;
 
    public User() {}
